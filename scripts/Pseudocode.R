@@ -3,7 +3,7 @@
 # 21 de octubre 2023
 
 # Abrir el script .txt
-ins_ta <- read.table("/Users/orchidaceae/Desktop/Tagua.Research/insectos_tagua.txt",header=T,sep="\t",dec=",")
+ins_ta <- read.table("/Users/orchidaceae/Desktop/insectos_tagua.txt",header=T,sep="\t",dec=",")
 
 # Descargar y cargar paquetes importantes
 library(ggplot2)
@@ -13,7 +13,7 @@ library(ggpubr)
 library(lubridate)
 
 # Crear una nueva columna que contenga el total de conteos de insectos por cada fila
-ins_ta$total <- rowSums(ins_ta[, 12:88], na.rm = TRUE)
+ins_ta$total <- rowSums(ins_ta[, 6:31], na.rm = TRUE)
 
 # Transformar formato de character a formato de hora en hora_retiro 
 ins_ta$hora_retiro <- as.POSIXct(ins_ta$hora_retiro,format="%H:%M")
